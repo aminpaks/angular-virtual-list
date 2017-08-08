@@ -1,6 +1,6 @@
 {
   "name": "angular-virtual-list",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Angular module for virtual -infinite- list",
   "scripts": {
     "cleanup": "rimraf dist",

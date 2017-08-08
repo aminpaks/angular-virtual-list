@@ -1,5 +1,5 @@
 /**
- * @license VirtualList v0.2.0
+ * @license VirtualList v0.2.1
  * (c) 2017 Amin Paks <amin.pakseresht@hotmail.com>
  * License: MIT
  */
