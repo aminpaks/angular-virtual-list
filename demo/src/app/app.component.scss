@@ -1,0 +1,33 @@
+@import '../variables';
+
+:host {
+  display: block;
+  max-width: 800px;
+}
+
+::ng-deep {
+  .list {
+    cursor: default;
+    border: 1px solid $primary-color;
+  }
+
+  .status {
+    padding: 1em 0;
+  }
+}
+
+h2 {
+  span {
+    display: inline-block;
+    border-bottom: 2px solid $border-color;
+  }
+}
+
+pre {
+  display: inline-block;
+}
+code {
+  display: block;
+  padding: 10px 20px;
+  background-color: #ddd;
+}

@@ -1,0 +1,135 @@
+@import '~reset-css/reset.css';
+@import './variables';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Saira+Condensed:500');
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: $primary-text-color;
+  background-color: #fff;
+  cursor: default;
+}
+html, body, input, button {
+  font-size: 18px;
+  font-family: $primary-font-family;
+}
+
+body {
+  .container {
+    margin: 0 auto;
+    display: block;
+    @media screen and (min-width: 940px) {
+      width: 940px;
+      min-width: 940px;
+      max-width: 940px;
+    }
+  }
+}
+
+a {
+  color: $primary-color;
+  &:hover {
+    color: $primary-color-dark;
+  }
+}
+
+h1,
+h2 {
+  margin-top: 1.2em;
+  margin-bottom: .6em;
+  font-weight: lighter;
+}
+h1 {
+  font-size: 2.4em;
+}
+h2 {
+  font-size: 1.8em;
+}
+input[type=number],
+button {
+  outline: none;
+  margin-bottom: .4em;
+}
+input[type=text],
+input[type=number],
+button {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-image: linear-gradient(0deg, #fff 10%, #ebebeb 25%, #fff 25%, #fff 50%, #fff 50%, #f2f2f2 100%);
+  background-size: 100% 200%;
+  background-position: 100% 100%;
+  transition: 200ms linear;
+}
+input[type=text],
+input[type=number] {
+  padding-left: 8px;
+  &:not([type=number]) {
+    padding-right: 8px;
+  }
+  background-position: 100% 0;
+  &:focus {
+    box-shadow: 0 0 8px rgba(#000, 0.1);
+  }
+}
+button {
+  cursor: pointer;
+
+  &:hover {
+    background-position: 100% 0%;
+    box-shadow: 0 0 8px rgba(#000, 0.1);
+  }
+  &:focus {
+    box-shadow: inset 0 0 10px rgba(#000, 0.2);
+  }
+}
+strong {
+  font-weight: bold;
+}
+code {
+  display: inline-block;
+  padding: 2px;
+  font-size: .65em;
+  border-radius: 4px;
+  vertical-align: middle;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid $primary-accent-color;
+  background-color: lighten($primary-color-light, 5%);
+}
+
+
+header {
+  font-family: $secondary-font-family;
+  color: #fff;
+  display: block;
+
+  padding: 1px;
+  line-height: 100px;
+  background-color: #9173ff;
+  box-shadow: 0 2px 10px rgba(#000, 0.2);
+
+  h1 {
+    margin: 0;
+    display: block;
+    margin: 0 auto;
+    max-width: 940px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 6px $primary-color-dark;
+  }
+}
+
+footer {
+  display: block;
+  margin-top: 4em;
+  line-height: 100px;
+  border-top: 1px solid $primary-accent-color;
+  background-color: $primary-color-light;
+}
+
+.loading {
+  margin: 3em;
+  display: block;
+  text-align: center;
+}

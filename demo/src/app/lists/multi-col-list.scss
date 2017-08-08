@@ -1,0 +1,25 @@
+@import '../../variables';
+
+:host {
+  display: block;
+
+  .list {
+    ::ng-deep {
+      .list-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+    }
+
+    .list-item {
+      flex: 0 0 50%;
+      height: 150px;
+      overflow: hidden;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

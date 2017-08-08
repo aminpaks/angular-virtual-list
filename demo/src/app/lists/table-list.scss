@@ -1,0 +1,42 @@
+@import '../../variables';
+
+:host {
+  display: block;
+
+  .list {
+    height: 400px;
+    max-width: none;
+    margin-bottom: 2em;
+  }
+}
+
+table {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: collapse;
+
+  tr {
+    background-color: $primary-color-light;
+
+    &.alt {
+      background-color: $primary-accent-color;
+    }
+
+    td {
+      padding: 1em;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: 150ms ease-in-out;
+    }
+
+    &:hover {
+      td {
+        color: #fff;
+        background-color: $primary-color-dark;
+        text-shadow: 0 0 4px rgba(#000, 0.8);
+        user-select: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

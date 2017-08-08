@@ -1,0 +1,57 @@
+@import '../../variables';
+
+:host {
+    display: block;
+}
+
+button {
+  background: #03A9F4;
+  border: none;
+  color: white;
+  margin: 1em;
+  width: 4em;
+  border-radius: 5em;
+  font-size: .8em;
+  line-height: 1em;
+  padding: .5em;
+  outline: none;
+}
+
+.loader {
+  height: 4em;
+  display: block;
+  line-height: 4em;
+  text-align: center;
+  position: relative;
+  visibility: hidden;
+  &.visible {
+      visibility: visible;
+  }
+}
+
+.loader:before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 3px;
+  background: red;
+  position: absolute;
+  transform: translateX(-50%);
+  animation: loader-animation 3s linear infinite;
+}
+
+@keyframes loader-animation {
+  0% {
+      left: -20%;
+      width: 5%;
+  }
+  50% {
+      left: 50%;
+      width: 10%;
+  }
+  100% {
+      left: 120%;
+      width: 5%;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../variables';
+
+:host {
+  display: block;
+}
+.visible-children-input {
+  margin-top: 1em;
+
+  input {
+    width: 80px;
+  }
+}
