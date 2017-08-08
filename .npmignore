@@ -1,0 +1,9 @@
+.ng_build/
+src/
+demo/
+*.log
+
+ng-package.json
+tsconfig.json
+tslint.json
+yarn.lock

@@ -1,0 +1,49 @@
+{
+  "name": "angular-virtual-list",
+  "version": "0.2.0",
+  "description": "Angular module for virtual -infinite- list",
+  "scripts": {
+    "cleanup": "rimraf dist",
+    "build": "npm run cleanup && npm run ngp",
+    "lint": "tslint -p tsconfig.json src/**/*.ts",
+    "test": "npm test",
+    "ngp": "ng-packagr -p ng-package.json",
+    "tslint": "tslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminpaks/angular-virtual-list"
+  },
+  "keywords": [
+    "virtual scroll",
+    "scroll",
+    "angular",
+    "angular 4"
+  ],
+  "author": "Amin Paks <amin.pakseresht@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aminpaks/angular-virtual-list/issues"
+  },
+  "homepage": "https://github.com/aminpaks/angular-virtual-list#readme",
+  "peerDependencies": {
+    "@angular/common": ">= 4.0.0 < 5",
+    "@angular/core": ">= 4.0.0 < 5",
+    "rxjs": ">= 5.0.0 < 6",
+    "zone.js": ">= 0.8.0 < 1"
+  },
+  "devDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@types/node": "^8.0.19",
+    "codelyzer": "^3.1.2",
+    "less": "^2.7.2",
+    "ng-packagr": "^1.0.0-pre.13",
+    "rimraf": "2.5.4",
+    "rxjs": "5.0.1",
+    "tslint": "^5.5.0",
+    "typescript": "~2.3.0",
+    "zone.js": "^0.8.16"
+  }
+}
