@@ -2,7 +2,7 @@
 ## Angular Virtual List
 
 This is a component to simulate virtual scroll for elements in Angular(v4)
-Forked from this [repository](https://github.com/rintoj/angular2-virtual-list).
+Forked from this [project](https://github.com/rintoj/angular2-virtual-scroll).
 
 ## About
 
@@ -63,13 +63,15 @@ export class AppModule { }
 
 | Attribute      | Type   | Description
 |----------------|--------|------------
-| source$          | Observable<T>[]  | The data that builds the templates within the virtual scroll. This is the same data that you'd pass to ngFor. This input is an observable of an array containing your elements.
-| height    | string | The exact height of virtual list if you don't want to the height to be calculated based on visibility counts of children. Can be any valid measure value or simple `'off'` to let you set the height by styles.
-| childHeight    | number | The exact height of the child item template. This is an optional input, virtual list will determine the height of elements automatically if this is not set.
+| source$          | Observable<T[]>  | The source of data that builds the templates within the virtual list. This is the same data that you would pass to ngFor be ngFor will received splice of it. This input is an observable of an array containing your elements.
+| height    | string | The exact height of virtual list if you don't want the height of list to be calculated based on visible children you can set property. The value can be any valid metrics or you may set it to `'off'` if you want to set the height of the list by styles, such as `style="height: 300px"`.
+| childHeight    | number | The exact height of each child item. This is an optional input, virtual list will determine the height of elements automatically if this is not set. but this will have a bad result if they children's size are vary.
 | visibleChildren   | number | Default is 6. This set the visible items inside of view port.
 | bufferAmount   | number | The the number of elements to be rendered outside of the current container's viewport. Useful when not all elements are the same dimensions.
 | update         | Event  | This event is fired every time `start` or `end` index change and emits list of items from `start` to `end`. The list emitted by this event must be used with `*ngFor` to render the actual list of items within `<virtual-list>`
 | change         | Event  | This event is fired every time `start` or `end` index change and emits `ChangeEvent` which of format: `{ start: number, end: number }`
+| scrollInto    | Method | This is a method to find and show one specific item from the source list into view port. This is the method signature `scrollInto(item: T) => void`.
+| refreshList   | Method | Refresh the current items in the view port.
 
 
 ## Lazy Loading
@@ -82,7 +84,7 @@ import { ChangeEvent } from 'angular-virtual-list';
 ...
 
 @Component({
-    selector: 'list-with-api',
+    selector: 'test-list',
     template: `
         <virtual-list
             [source$]="items$"
@@ -99,6 +101,7 @@ export class ListWithApiComponent implements OnChanges {
 
     @Input()
     items: ListItem[];
+    scrollList: ListItem[];
 
     protected items$ = new BehaviorSubject<ListItem[]>(null);
     protected buffer: ListItem[] = [];
@@ -122,6 +125,8 @@ export class ListWithApiComponent implements OnChanges {
 }
 ```
 
+## Refresh current items
+
 ```ts
 import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -138,6 +143,7 @@ import { VirtualListComponent } from 'angular-virtual-list';
 export class ListComponent {
 
     items = ['Item1', 'Item2', 'Item3'];
+    scrollList = [];
     items$ = Observable.of(this.items);
 
     @ViewChild(VirtualListComponent)
@@ -162,7 +168,7 @@ import { VirtualListComponent } from 'angular-virtual-list';
 @Component({
     selector: 'test-list',
     template: `
-        <virtual-list [items]="items$" (update)="scrollList = $event">
+        <virtual-list [source$]="items$" (update)="scrollList = $event">
             <div *ngFor="let item of scrollList; let i = index"> {{i}}: {{item}} </div>
         </virtual-list>
     `
@@ -170,6 +176,7 @@ import { VirtualListComponent } from 'angular-virtual-list';
 export class ListComponent {
 
     items = ['Item1', 'Item2', 'Item3'];
+    scrollList = [];
     items$ = Observable.of(this.items);
 
     @ViewChild(VirtualListComponent)
@@ -181,6 +188,9 @@ export class ListComponent {
     }
 }
 ```
+
+## Demo
+Take a look at these [example](https://aminpaks.github.io/angular-virtual-list/demo/dist/).
 
 ## Credits
 
