@@ -1,5 +1,5 @@
 /**
- * @license VirtualList v0.2.1
+ * @license VirtualList v0.2.3
  * Based on Angular2-Virtual-Scroll: https://github.com/rintoj/angular2-virtual-scroll
  * (c) 2016 Rinto Jose (rintoj)
  * (c) 2017 Amin Paks <amin.pakseresht@hotmail.com>
