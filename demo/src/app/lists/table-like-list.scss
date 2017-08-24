@@ -1,0 +1,88 @@
+@import '../../variables';
+
+:host {
+  display: block;
+
+  .list {
+    width: 100%;
+    border: none;
+    max-width: none;
+  }
+}
+
+@mixin colum-size($percentage) {
+
+}
+
+.table-like {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 2em;
+  border: 1px solid $primary-color;
+}
+.table-head {
+  color: #fff;
+  background-color: $primary-color-dark;
+  border-bottom: 1px solid $primary-color;
+
+  span {
+    text-align: center;
+    user-select: none;
+
+    &.sortable {
+      transition: 150ms ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten($primary-color-dark, 2%);
+      }
+    }
+
+    &:not(:last-of-type) {
+      border-right: 1px solid $primary-color;
+    }
+  }
+}
+.table-row {
+  transition: 150ms ease-in-out;
+  background-color: $primary-color-light;
+
+  &.alt {
+    background-color: $primary-accent-color;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: lighten($primary-color-dark, 6%);
+    text-shadow: 0 0 4px rgba(#000, 0.8);
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+.table-head,
+.table-row {
+  display: flex;
+  flex-direction: row;
+
+  span {
+    padding: 1em;
+
+    &:nth-child(1) {
+      flex: 0 0 5%;
+    }
+    &:nth-child(2) {
+      flex: 0 0 16%;
+    }
+    &:nth-child(3) {
+      flex: 0 0 8%;
+    }
+    &:nth-child(4) {
+      flex: 0 0 4%;
+    }
+    &:nth-child(5) {
+      flex: 1 0 44%;
+    }
+  }
+}

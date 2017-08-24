@@ -8,6 +8,7 @@ import { ListItemComponent } from './lists/list-item.component';
 import { ListWithApiComponent } from './lists/list-with-api.component';
 import { MultiColListComponent } from './lists/multi-col-list.component';
 import { TableListComponent } from './lists/table-list.component';
+import { TableLikeListComponent } from './lists/table-like-list.component';
 import { VerticalListComponent } from './lists/vertical-list.component';
 
 import { VirtualListModule } from 'angular-virtual-list';
@@ -19,6 +20,7 @@ import { VirtualListModule } from 'angular-virtual-list';
     ListWithApiComponent,
     MultiColListComponent,
     TableListComponent,
+    TableLikeListComponent,
     VerticalListComponent,
   ],
   imports: [
