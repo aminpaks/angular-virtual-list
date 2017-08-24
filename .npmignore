@@ -1,9 +1,8 @@
-.ng_build/
+.compile/
 src/
 demo/
 *.log
 
-ng-package.json
 tsconfig.json
 tslint.json
 yarn.lock

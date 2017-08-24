@@ -20,5 +20,15 @@
     "types": [
       "node"
     ]
-  }
+  },
+  "files": [
+    "./src/public_api.ts"
+  ],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "demo"
+  ]
 }

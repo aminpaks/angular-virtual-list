@@ -1,5 +1,5 @@
 node_modules/
-.ng_build/
+.compile/
 dist/
 
 *.log
